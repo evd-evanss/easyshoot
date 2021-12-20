@@ -1,0 +1,3 @@
+rootProject.name = "SmartPrint"
+include ':app'
+include ':smartprint'
