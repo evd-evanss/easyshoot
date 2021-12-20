@@ -10,14 +10,14 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityMainBinding
 
-    lateinit var smartPrint : SmartPrintBuilder
+    lateinit var smartPrint : SmartPrint
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setListeners()
-        smartPrint = SmartPrintBuilder.Builder(this)
+        smartPrint = SmartPrint.Builder(this)
             .setViewForScreenShoot(binding.root)
             .requestPermission()
             .build()
