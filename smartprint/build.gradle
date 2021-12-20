@@ -3,7 +3,7 @@ plugins {
 }
 apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: "com.jfrog.bintray"
+apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 31
@@ -65,9 +65,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'JGabrielFreitas'
-                        name 'João de Freitas'
-                        email 'jgabrielafreitas@gmail.com'
+                        id 'evd-evanss'
+                        name 'Evandro Costa'
+                        email 'revandro77@yahoo.com.br'
                     }
                 }
                 scm {
@@ -82,7 +82,7 @@ install {
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
+    archiveClassifier.set('sources')
 }
 
 task javadoc(type: Javadoc) {
@@ -91,7 +91,7 @@ task javadoc(type: Javadoc) {
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+    archiveClassifier.set('javadoc')
     from javadoc.destinationDir
 }
 artifacts {
@@ -110,7 +110,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"
-        name = "com.jgabrielfreitas:logger"
+        name = "com.sugarspoon:smartprint"
         websiteUrl = siteUrl
         vcsUrl     = gitUrl
         licenses   = ['MIT']
@@ -120,4 +120,5 @@ bintray {
 
 repositories {
     mavenCentral()
+    google()
 }

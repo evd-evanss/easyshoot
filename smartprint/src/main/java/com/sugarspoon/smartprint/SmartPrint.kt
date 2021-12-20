@@ -1,6 +1,5 @@
 package com.sugarspoon.smartprint
 
-import android.Manifest
 import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.content.ContentValues
 import android.content.Context
@@ -16,7 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
-class SmartPrintBuilder(builder: Builder) {
+class SmartPrint(builder: Builder) {
 
     private val view: View = builder.view
     private val context: Context = builder.context
@@ -33,15 +32,15 @@ class SmartPrintBuilder(builder: Builder) {
         fun requestPermission(): Builder {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 (context as AppCompatActivity).requestPermissions(
-                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                    100
+                    arrayOf(WRITE_EXTERNAL_STORAGE),
+                    REQUEST_CODE
                 )
             }
             return this
         }
 
-        fun build(): SmartPrintBuilder {
-            return SmartPrintBuilder(this)
+        fun build(): SmartPrint {
+            return SmartPrint(this)
         }
 
     }
