@@ -1,4 +1,4 @@
-package com.sugarspoon.smartprint
+package com.sugarspoon.easyshoot
 
 import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.content.ContentValues
