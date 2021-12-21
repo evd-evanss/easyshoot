@@ -4,8 +4,6 @@ plugins {
     id 'maven-publish'
 }
 apply plugin: 'kotlin-android'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 31
@@ -45,6 +43,8 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.github.jitpack:gradle-simple:1.0'
 }
 
 afterEvaluate {
@@ -52,8 +52,8 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.sugarspoon'
-                artfactId = 'easy_shoot'
+                groupId = "com.sugarspoon.easyshoot"
+                artifactId = "easy_shoot"
                 version = '1.0.0'
             }
         }
