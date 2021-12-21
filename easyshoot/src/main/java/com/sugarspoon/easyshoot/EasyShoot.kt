@@ -15,7 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
-class SmartPrint(builder: Builder) {
+class EasyShoot(builder: Builder) {
 
     private val view: View = builder.view
     private val context: Context = builder.context
@@ -39,8 +39,8 @@ class SmartPrint(builder: Builder) {
             return this
         }
 
-        fun build(): SmartPrint {
-            return SmartPrint(this)
+        fun build(): EasyShoot {
+            return EasyShoot(this)
         }
 
     }

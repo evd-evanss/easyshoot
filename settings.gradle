@@ -1,2 +1,2 @@
 rootProject.name = "SmartPrint"
-include ':smartprint'
+include ':easyshoot'
